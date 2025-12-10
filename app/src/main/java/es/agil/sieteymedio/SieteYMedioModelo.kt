@@ -30,9 +30,6 @@ class SieteYMedioModelo{
         10 to "Rey"
     )
 
-    val rulesText:String = "Lorem ipsum"
-    val hiddenCardImgPath:String ="hidden.png"
-
     var turno:Int = 1
     var currentDeckPosition:Int = 0
     var puntajeJ1:Double = 0.0

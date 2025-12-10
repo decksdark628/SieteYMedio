@@ -1,4 +1,4 @@
 package es.agil.sieteymedio
 
-class SieteYMedioController {
+class SieteYMedioController{
 }
