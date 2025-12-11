@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <resources>
-        <style name="RobotoSlab">
-            <item name="android:fontFamily">@font/roboto_slab_regular</item>
+        <style name="Title">
+            <item name="android:fontFamily">@font/roboto_slab_medium</item>
+            <item name="android:textColor">@color/light_green</item>
+            <item name="android:textSize">@dimen/size_title</item>
         </style>
-    </resources>
+    <style name="Button">
+        <item name="android:fontFamily">@font/roboto_slab_bold</item>
+        <item name="android:textColor">@color/light_green</item>
+        <item name="android:textSize">@dimen/size_title</item>
+    </style>
+    <style name="SquareButton" parent="Button">
+        <item name="android:fontFamily">@font/roboto_slab_regular</item>
+        <item name="android:textColor">@color/light_green</item>
+        <item name="android:backgroundTint">@color/blueish_green</item>
+        <item name="android:textSize">@dimen/size_button</item>
+        <item name="cornerRadius">0dp</item>
+    </style>
 </resources>

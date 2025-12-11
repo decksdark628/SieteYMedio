@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Siete y medio</string>
+    <string name="app_name">Siete y Medio</string>
     <string name="titulo">7.5</string>
     <string name="rules">Reglas del siete y medio</string>
     <string name="player1">Jugador 1</string>
     <string name="player2">Jugador 2</string>
     <string name="plantarse">🪴</string>
-
+    <string name="restart">RESTART</string>
 </resources>

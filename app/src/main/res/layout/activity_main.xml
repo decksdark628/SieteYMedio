@@ -12,14 +12,8 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@style"
-        android:shadowColor="@color/black"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="2"
+        style="@style/Title"
         android:text="@string/titulo"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_title"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
@@ -43,14 +37,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.06" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.94" />
+        app:layout_constraintGuide_percent="0.95" />
 
     <Button
         android:id="@+id/btnHelp"
@@ -59,10 +53,6 @@
         android:text="\?"
         android:textSize="30sp"
         app:cornerRadius="0dp"
-        android:shadowColor="@color/black"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="3"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
@@ -70,20 +60,9 @@
         android:id="@+id/btnRestart"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:text="RESTART"
-        android:textSize="18sp"
-        android:shadowColor="@color/black"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="3"
-        app:cornerRadius="0dp"
+        android:text="@string/restart"
+        style="@style/SquareButton"
         app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
-
-    <LinearLayout
-        android:id="@+id/layoutPlayer1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
