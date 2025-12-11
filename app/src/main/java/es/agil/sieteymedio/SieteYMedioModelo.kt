@@ -34,5 +34,7 @@ class SieteYMedioModelo{
     var currentDeckPosition:Int = 0
     var puntajeJ1:Double = 0.0
     var puntajeJ2:Double = 0.0
+    var leftCardActive:Boolean = false
+    var RightCardActive:Boolean = false
     lateinit var deck:List<Carta>
 }

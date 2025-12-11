@@ -4,6 +4,9 @@ interface ISieteYMedioModelo{
     fun createCards()
     fun shuffleCards()
 
+    fun activateCard(player:Int)
+    fun disactivateCard(player:Int)
+
     fun nextCard()
     fun getNextCard():SieteYMedioModelo.Carta
     fun resetCurrentCardPos()

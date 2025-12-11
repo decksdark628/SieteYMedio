@@ -1,10 +1,9 @@
 package es.agil.sieteymedio
 
 interface ISieteYMedioVista{
-    fun enableCard(player:Int)
-    fun disableCard(player:Int)
-    fun hideCard(player:Int)
-    fun showCard(player:Int)
+    fun showHiddenActive(player:Int)
+    fun showHiddenInactive(player:Int)
+    fun showCard(player:Int, carta: SieteYMedioModelo.Carta)
 
     fun enablePlantarseButton(player:Int)
     fun disablePlantarseButton(player:Int)

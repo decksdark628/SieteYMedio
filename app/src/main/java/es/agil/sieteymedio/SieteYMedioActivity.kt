@@ -1,64 +1,101 @@
 package es.agil.sieteymedio
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
+import es.agil.sieteymedio.databinding.ActivityMainBinding
 
 class SieteYMedioActivity : ISieteYMedioVista, AppCompatActivity(){
-    val hiddenCardImgPath:String ="hidden.png"
-    val rulesText:String = "Lorem ipsum"
+    private val activeHiddenCard:String ="hidden_active"
+    private val unactiveHiddenCard:String ="hidden_unactive"
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        // enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        //setContentView(R.layout.activity_main)
+
+        val controller:SieteYMedioController = SieteYMedioController(this)
+
+        binding.cardsP1.setOnClickListener{
+            controller.clickLeftImage()
+        }
+        binding.cardsP2.setOnClickListener{
+            controller.clickRightImage()
+        }
     }
 
-    override fun enableCard(player: Int) {
-        TODO("Not yet implemented")
+    override fun showHiddenActive(player: Int){
+        val imgCarta = resources.getIdentifier(activeHiddenCard, "drawable", "es.agil.sieteymedio")
+        if(player == 1){
+            binding.cardsP1.setImageResource(imgCarta)
+        }
+        else{
+            binding.cardsP2.setImageResource(imgCarta)
+        }
     }
 
-    override fun disableCard(player: Int) {
-        TODO("Not yet implemented")
+    override fun showHiddenInactive(player: Int) {
+        val imgCarta = resources.getIdentifier(unactiveHiddenCard, "drawable", "es.agil.sieteymedio")
+        if(player == 1){
+            binding.cardsP1.setImageResource(imgCarta)
+        }
+        else{
+            binding.cardsP2.setImageResource(imgCarta)
+        }
     }
 
-    override fun hideCard(player: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun showCard(player: Int) {
-        TODO("Not yet implemented")
+    override fun showCard(player: Int, carta: SieteYMedioModelo.Carta) {
+        val imgCarta = resources.getIdentifier(carta.img, "drawable", "es.agil.sieteymedio")
+        if(player == 1) {
+            binding.cardsP1.setImageResource(imgCarta)
+        }
+        else{
+            binding.cardsP2.setImageResource(imgCarta)
+        }
     }
 
     override fun enablePlantarseButton(player: Int) {
-        TODO("Not yet implemented")
+        if(player == 1) {
+            binding.btnPlantP1.isEnabled = true
+        }
+        else{
+            binding.btnPlantP2.isEnabled = true
+        }
     }
 
     override fun disablePlantarseButton(player: Int) {
-        TODO("Not yet implemented")
+        if(player == 1) {
+            binding.btnPlantP1.isEnabled = false
+        }
+        else{
+            binding.btnPlantP2.isEnabled = false
+        }
     }
 
     override fun setCurrentSumValue(player: Int, value: Double) {
-        TODO("Not yet implemented")
+        if(player == 1) {
+            binding.txtPuntajeP1.text = value.toString()
+        }
+        else{
+            binding.txtPuntajeP2.text = value.toString()
+        }
     }
 
     override fun setWinnerText(text: String) {
-        TODO("Not yet implemented")
+        binding.txtWinner.text = text
     }
 
     override fun showWinnerText() {
-        TODO("Not yet implemented")
+        binding.txtWinner.visibility = View.VISIBLE
     }
 
     override fun hideWinnerText() {
-        TODO("Not yet implemented")
+        binding.txtWinner.visibility = View.INVISIBLE
     }
 
     override fun showWinnerGif() {
