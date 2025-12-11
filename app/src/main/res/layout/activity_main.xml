@@ -8,22 +8,19 @@
     android:background="@drawable/bg"
     tools:context=".SieteYMedioActivity">
 
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Title"
-        android:text="@string/titulo"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
@@ -46,22 +43,153 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
+    <TextView
+        android:id="@+id/txtTitle"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/titulo"
+        app:layout_constraintBottom_toBottomOf="@+id/btnHelp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/btnHelp" />
+
     <Button
         android:id="@+id/btnHelp"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:text="\?"
-        android:textSize="30sp"
-        app:cornerRadius="0dp"
+        style="@style/SquareButton"
+        android:text="@string/questionMarkButton"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
+    <LinearLayout
+        android:id="@+id/layoutPlayers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/txtWinner"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+        app:layout_constraintVertical_bias="0.4">
+
+        <LinearLayout
+            android:id="@+id/layoutP1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/cardsP1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/hidden" />
+
+            <TextView
+                android:id="@+id/txtNameP1"
+                style="@style/RegularTextCentered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/player1" />
+
+            <Button
+                android:id="@+id/btnPlantP1"
+                style="@style/SquareButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="@string/plantarse" />
+
+            <TextView
+                android:id="@+id/txtPuntajeP1"
+                style="@style/RegularTextCentered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="0.0" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+        <LinearLayout
+            android:id="@+id/layoutP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/cardsP2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/hidden" />
+
+            <TextView
+                android:id="@+id/txtNameP2"
+                style="@style/RegularTextCentered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/player2" />
+
+            <Button
+                android:id="@+id/btnPlantP2"
+                style="@style/SquareButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="@string/plantarse" />
+
+            <TextView
+                android:id="@+id/txtPuntajeP2"
+                style="@style/RegularTextCentered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:text="0.0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtWinner"
+        style="@style/RegularTextCenteredBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Ganador: Nadie"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineMiddle"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
+
     <Button
         android:id="@+id/btnRestart"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        style="@style/Button"
         android:text="@string/restart"
-        style="@style/SquareButton"
         app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
 

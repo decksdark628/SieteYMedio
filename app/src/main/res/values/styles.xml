@@ -3,18 +3,46 @@
         <style name="Title">
             <item name="android:fontFamily">@font/roboto_slab_medium</item>
             <item name="android:textColor">@color/light_green</item>
-            <item name="android:textSize">@dimen/size_title</item>
+            <item name="android:textSize">38sp</item>
         </style>
-    <style name="Button">
-        <item name="android:fontFamily">@font/roboto_slab_bold</item>
-        <item name="android:textColor">@color/light_green</item>
-        <item name="android:textSize">@dimen/size_title</item>
-    </style>
-    <style name="SquareButton" parent="Button">
-        <item name="android:fontFamily">@font/roboto_slab_regular</item>
-        <item name="android:textColor">@color/light_green</item>
-        <item name="android:backgroundTint">@color/blueish_green</item>
-        <item name="android:textSize">@dimen/size_button</item>
-        <item name="cornerRadius">0dp</item>
-    </style>
+        <style name="RegularText">
+            <item name="android:fontFamily">@font/dm_mono_medium</item>
+            <item name="android:textColor">@color/light_green</item>
+            <item name="android:textSize">24sp</item>
+        </style>
+        <style name="RegularTextCentered" parent="RegularText">
+            <item name="android:textAlignment">center</item>
+        </style>
+        <style name="RegularTextCenteredBig" parent="RegularTextCentered">
+            <item name="android:textSize">32sp</item>
+        </style>
+
+        <style name="Button">
+            <item name="android:fontFamily">@font/dm_mono_medium</item>
+            <item name="android:textSize">24sp</item>
+            <item name="android:textColor">@color/light_green</item>
+            <item name="android:backgroundTint">@color/blueish_green</item>
+            <item name="android:layout_width">wrap_content</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="cornerRadius">0dp</item>
+            <item name="android:paddingStart">8dp</item>
+            <item name="android:paddingEnd">8dp</item>
+            <item name="android:paddingTop">12dp</item>
+            <item name="android:paddingBottom">12dp</item>
+            <item name="android:insetTop">0dp</item>
+            <item name="android:insetBottom">0dp</item>
+        </style>
+        <style name="SquareButton">
+            <item name="android:fontFamily">@font/roboto_slab_medium</item>
+            <item name="android:textSize">28sp</item>
+            <item name="android:textColor">@color/light_green</item>
+            <item name="android:backgroundTint">@color/blueish_green</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="cornerRadius">0dp</item>
+            <item name="android:layout_width">60dp</item>
+            <item name="android:paddingTop">10dp</item>
+            <item name="android:paddingBottom">10dp</item>
+            <item name="android:insetTop">0dp</item>
+            <item name="android:insetBottom">0dp</item>
+        </style>
 </resources>
