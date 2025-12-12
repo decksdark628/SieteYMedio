@@ -9,6 +9,7 @@ import es.agil.sieteymedio.databinding.ActivityMainBinding
 class SieteYMedioActivity : ISieteYMedioVista, AppCompatActivity(){
     private val activeHiddenCard:String ="hidden_active"
     private val unactiveHiddenCard:String ="hidden_unactive"
+    private val controller:SieteYMedioController= SieteYMedioController(this)
 
     private lateinit var binding: ActivityMainBinding
 
@@ -19,14 +20,14 @@ class SieteYMedioActivity : ISieteYMedioVista, AppCompatActivity(){
         setContentView(binding.root)
         //setContentView(R.layout.activity_main)
 
-        val controller:SieteYMedioController = SieteYMedioController(this)
-
         binding.cardsP1.setOnClickListener{
             controller.clickLeftImage()
         }
         binding.cardsP2.setOnClickListener{
             controller.clickRightImage()
         }
+
+        controller.initialState()
     }
 
     override fun showHiddenActive(player: Int){
@@ -86,6 +87,24 @@ class SieteYMedioActivity : ISieteYMedioVista, AppCompatActivity(){
         }
     }
 
+    override fun showCurrentSumValue(player: Int) {
+        if(player == 1){
+            binding.txtPuntajeP1.visibility = View.VISIBLE
+        }
+        else{
+            binding.txtPuntajeP2.visibility = View.VISIBLE
+        }
+    }
+
+    override fun hideCurrentSumValue(player: Int) {
+        if(player == 1){
+            binding.txtPuntajeP1.visibility = View.INVISIBLE
+        }
+        else{
+            binding.txtPuntajeP2.visibility = View.INVISIBLE
+        }
+    }
+
     override fun setWinnerText(text: String) {
         binding.txtWinner.text = text
     }
@@ -100,5 +119,17 @@ class SieteYMedioActivity : ISieteYMedioVista, AppCompatActivity(){
 
     override fun showWinnerGif() {
         TODO("Not yet implemented")
+    }
+
+    fun clickedPlantarseLeft(view: View){
+        controller.clickedPlantarseLeft()
+    }
+
+    fun clickedPlantarseRight(view: View){
+        controller.clickedPlantarseRight()
+    }
+
+    fun restartAll(view: View) {
+        controller.initialState()
     }
 }

@@ -106,6 +106,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="60dp"
                 android:layout_marginBottom="10dp"
+                android:onClick="clickedPlantarseLeft"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:text="@string/plantarse" />
@@ -160,6 +161,7 @@
                 android:layout_marginRight="60dp"
                 android:layout_marginBottom="10dp"
                 android:enabled="false"
+                android:onClick="clickedPlantarseRight"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:text="@string/plantarse" />
@@ -191,6 +193,7 @@
     <Button
         android:id="@+id/btnRestart"
         style="@style/Button"
+        android:onClick="restartAll"
         android:text="@string/restart"
         app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />

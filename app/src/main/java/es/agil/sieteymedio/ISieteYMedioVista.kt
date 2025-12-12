@@ -9,6 +9,8 @@ interface ISieteYMedioVista{
     fun disablePlantarseButton(player:Int)
 
     fun setCurrentSumValue(player:Int, value:Double)
+    fun showCurrentSumValue(player:Int)
+    fun hideCurrentSumValue(player:Int)
 
     fun setWinnerText(text:String)
     fun showWinnerText()
